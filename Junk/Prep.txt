@@ -1,0 +1,38 @@
+Screening for todlers - https://www.kaggle.com/datasets/fabdelja/autism-screening-for-toddlers?resource=download 
+
+Autism images - https://www.kaggle.com/datasets/cihan063/autism-image-data
+
+Screening file
+==================
+Item	    			Behavior/Characteristic Assessed				Description							Score Interpretation
+============================================================================================================================================================================================================================================
+
+A1				Social Interaction (Eye Contact)	Evaluates how a child engages in eye contact, a key part of social communication.	Low: Typical eye contact. High: Limited or inconsistent eye contact.
+
+A2
+				Response to Name			Assesses the child's consistency in responding to their name being called.		Low: Child often responds to name. High: Rarely or never responds to name.
+
+A3
+				Use of Gestures				Looks at the child's use of gestures (e.g., pointing, waving) to communicate.		Low: Regular use of gestures. High: Rare or absent use of gestures.
+
+A4				Interest in Other Children		Measures the child's interest in watching or interacting with other children.		Low: Shows interest in other children. High: Limited or no interest in other 	
+																									children.
+
+A5				Showing Objects to Others		Assesses if the child shows or shares objects (like toys) with others, 			Low: Often shows objects to others. High: Rarely or never shows objects to 										a sign of social engagement.													others.						
+
+A6				Imitative Play				Observes if the child engages in imitative play (e.g., copying actions or words),       Low: Engages in imitative play. High: Limited or absent imitative play.
+
+									a typical developmental milestone.	
+
+A7				Following Pointing/Gaze			Checks if the child follows another person’s pointing or gaze direction,                Low: Follows pointing/gaze cues. High: Does not follow these cues.
+									indicating joint attention.
+										
+
+A8				Enjoyment of Peek-a-Boo and 		Evaluates if the child enjoys games like peek-a-boo, which involve turn-taking 		Low: Enjoys interactive games. High: Lack of interest in interactive games.
+				Interactive Games			and social interaction.   
+						
+A9				Repetitive Behaviors			Assesses repetitive behaviors, such as hand-flapping or repeating words/actions,        Low: Limited or no repetitive behaviors. High: Notable repetitive behaviors.
+
+									which are often associated with autism.	
+A10				Sensory Sensitivities			Measures sensitivity to sensory input (e.g., sounds, lights, textures), 		Low: Typical sensory responses. High: Heightened or unusual sensory 											a common characteristic in autism.													responses.			
+										
