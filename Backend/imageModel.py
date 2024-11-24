@@ -17,4 +17,4 @@ def imageValidator(image_file):
     y_pred = imageModel.predict(opencv_image)
 
     result = class_names[np.argmax(y_pred)]
-    return result
+    return result, y_pred

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from imageModel import imageValidator
 from screenModel import screeningModel
@@ -34,15 +34,28 @@ def autismChecker():
 
         print("This is after Encoding", A, Age_Mons, Sex_encoded, Jaundice_encoded, Family_mem_with_ASD_encoded)
 
-        screenValue = screeningModel(A, Age_Mons, Sex_encoded, Jaundice_encoded, Family_mem_with_ASD_encoded)
-        imageValue = imageValidator(image_file)
+        screenValue, screenScore = screeningModel(A, Age_Mons, Sex_encoded, Jaundice_encoded, Family_mem_with_ASD_encoded)
+        imageValue, imgScore = imageValidator(image_file)
 
         print(screenValue ,imageValue)
-        message = 'Form submitted successfully!'
-        return render_template('autismChecker.html', message=message)
+        finalResult = combine_scores(np.argmax(imgScore),np.argmax(screenScore), np.sum(A))
+        return jsonify({"message": f"For the given report, the result is {finalResult}."})
+
     return render_template('autismChecker.html', message=None)
 
+def combine_scores(Img_Score, Screen_Score, Qchat_Value):
+    weight_Img = 0.4
+    weight_Screen = 0.4
+    weight_Qchat = 0.2
 
+    combined_score = (weight_Img * Img_Score) + (weight_Screen * Screen_Score) + (weight_Qchat * Qchat_Value)
+
+    threshold = 0.6  
+
+    if combined_score >= threshold:
+        return "Autistic"
+    else:
+        return "Non_Autistic"
 
 if __name__ == '__main__':
     app.run(debug=True)

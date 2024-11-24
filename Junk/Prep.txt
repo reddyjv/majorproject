@@ -36,3 +36,15 @@ A9				Repetitive Behaviors			Assesses repetitive behaviors, such as hand-flappin
 									which are often associated with autism.	
 A10				Sensory Sensitivities			Measures sensitivity to sensory input (e.g., sounds, lights, textures), 		Low: Typical sensory responses. High: Heightened or unusual sensory 											a common characteristic in autism.													responses.			
 										
+
+
+if screenValue.lower() == 'yes' and imageValue.lower() == 'yes':
+            print("For the given details, the result is Autistic")
+        elif screenValue.lower() == 'no' and imageValue.lower() == 'no':
+            print("For the given details, the result is Non_Autistic")
+        elif screenValue.lower() == 'no' and imageValue.lower() == 'yes':
+            qVal = sum(A)
+            if screenScore[0] >= 0.75 or imgScore[0] >= 0.75 or qVal >= 8:
+                print("For the given details, the result is Autistic")
+            elif 
+            print("For the  given details, the result is ")

@@ -5,11 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from utilities import autism_screeningModel
 screeningModel = load_model(autism_screeningModel)
 
-# Your array of values
 A = [1, 0, 1, 0, 1, 1, 1, 1, 0, 1]
-
-# Create a DataFrame with each element of `A` as a separate column
-# Define column names as `A1` to `A10`
 data = pd.DataFrame([{
         **{f'A{i+1}': val for i, val in enumerate(A)},
         'Age_Mons': 24,
@@ -19,13 +15,11 @@ data = pd.DataFrame([{
         'Family_mem_with_ASD': 1
     }])
 
-# Display the DataFrame
 print(data)
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(data)
 scaled_data = np.array(scaled_data)
 pred = screeningModel.predict(scaled_data)
 pred = np.argmax(pred, axis=1)
-    # return 'Yes' if pred == 1 else 'No'
 print(pred)
 
