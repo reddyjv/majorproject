@@ -47,11 +47,9 @@ def combine_scores(Img_Score, Screen_Score, Qchat_Value):
     weight_Img = 0.4
     weight_Screen = 0.4
     weight_Qchat = 0.2
-
     combined_score = (weight_Img * Img_Score) + (weight_Screen * Screen_Score) + (weight_Qchat * Qchat_Value)
-
     threshold = 0.6  
-
+    
     if combined_score >= threshold:
         return "Autistic"
     else:
