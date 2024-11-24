@@ -138,44 +138,51 @@
 
     <button type="submit">Submit</button>
 </form>
+<div id="messageDiv">
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <p>No message</p>
+    {% endif %}
+</div>
 <script>
     const form = document.getElementById('autismForm');
     const imageInput = document.getElementById('image');
-    const messageDiv = document.getElementById('messageDiv'); // Assuming you want to display the message here
+    const resultMessageDiv = document.getElementById('resultMessage'); // The div for displaying results
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault(); // Prevent default form submission
-
+    
         // Check if an image is selected
         const imageFile = imageInput.files[0];
         if (!imageFile) {
             alert('Please upload an image.');
             return;
         }
-
+    
         // Gather form data
         const formData = new FormData(form);
         formData.append('image', imageFile);
-
+    
         // Send data using fetch
         try {
             const response = await fetch('/compute', {
                 method: 'POST',
                 body: formData,
             });
-
+    
             // If response is successful, show success message
             if (response.ok) {
-                const result = await response.text();
-                messageDiv.innerHTML = '<p>Form submitted successfully!</p>';
-                console.log('Form data successfully sent');
+                const result = await response.json(); // Parse the JSON response
+                document.getElementById('messageDiv').innerHTML = `<p>${result.message}</p>`;  // Display the message dynamically
             } else {
-                messageDiv.innerHTML = '<p>Error submitting form!</p>';
+                document.getElementById('messageDiv').innerHTML = '<p>Error submitting form!</p>';
             }
         } catch (error) {
             console.error('Error:', error);
-            messageDiv.innerHTML = '<p>Error submitting form!</p>';
+            document.getElementById('messageDiv').innerHTML = '<p>Error submitting form!</p>';
         }
+    
         alert('Form submitted successfully!');
         // Clear form (optional)
         form.reset();

@@ -19,6 +19,6 @@ def  screeningModel(A, Age_Mons, Sex, Jaundice, Family_mem_with_ASD):
     scaler = StandardScaler()
     scaled_data = scaler.fit_transform(data)
     scaled_data = np.array(scaled_data)
-    pred = screenModel.predict(scaled_data)
-    pred = np.argmax(pred, axis=1)
-    return 'Yes' if pred == 1 else 'No'
+    pred_val = screenModel.predict(scaled_data)
+    pred = np.argmax(pred_val, axis=1)
+    return 'Yes' if pred == 1 else 'No', pred_val
