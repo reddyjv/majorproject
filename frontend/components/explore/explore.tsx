@@ -83,6 +83,19 @@ export default function ExplorePage() {
     }
   }
 
+  const scoreDetails = [
+    { id: "A1", placeholder: "Social Interaction" },
+    { id: "A2", placeholder: "Responding to social cues" },
+    { id: "A3", placeholder: "Maintains eye contact during interaction" },
+    { id: "A4", placeholder: "Engages in repetitive actions or speech" },
+    { id: "A5", placeholder: "Overreaction to sensory inputs (sound, light)" },
+    { id: "A6", placeholder: "Understanding others' emotions" },
+    { id: "A7", placeholder: "Resistance to change in routines or environment" },
+    { id: "A8", placeholder: "Ability to focus on tasks or activities" },
+    { id: "A9", placeholder: "Ability to form relationships with peers" },
+    { id: "A10", placeholder: "Uses gestures or expressions to communicate" },
+  ];
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50">
       <Navbar />
@@ -119,19 +132,19 @@ export default function ExplorePage() {
 
         <Card className="mb-8">
           <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold text-blue-600 mb-4">Autism Scores</h2>
+            <h2 className="text-2xl font-semibold text-blue-600 mb-4">Autism Indicators (Present = 0, Absent = 1)</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {Array.from({ length: 10 }, (_, i) => i + 1).map((idx) => (
-                <div key={idx}>
-                  <Label htmlFor={`A${idx}`} className="text-blue-600">Score {idx}</Label>
+              {scoreDetails.map(({ id, placeholder }) => (
+                <div key={id}>
+                <Label htmlFor={id} className="text-blue-600">{id.replace("A", "Indicator  ")}</Label>
                   <Input
-                    id={`A${idx}`}
+                    id={id}
                     type="number"
-                    placeholder="Enter score (0-10)"
-                    value={formData[`A${idx}` as keyof typeof formData]}
+                    placeholder={placeholder}
+                    value={formData[id as keyof typeof formData]}
                     onChange={handleInputChange}
                     className="mt-1"
-                  />
+                    />
                 </div>
               ))}
             </div>
