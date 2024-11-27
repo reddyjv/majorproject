@@ -69,8 +69,11 @@ export default function ExplorePage() {
       })
 
       if (!response.ok) {
-        throw new Error('Failed to connect to the server')
+        const errorData = await response.json();
+        setResult(errorData.message || "Failed to connect to the server");
+        return;
       }
+      
 
       const resultData = await response.json()
       setResult(resultData.message)
