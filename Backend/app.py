@@ -38,8 +38,15 @@ def autismChecker():
         imageValue, imgScore = imageValidator(image_file)
 
         print(screenValue ,imageValue)
-        finalResult = combine_scores(np.argmax(imgScore),np.argmax(screenScore), np.sum(A))
-        return jsonify({"message": f"For the given report, the result is {finalResult}."})
+
+        if screenValue.lower() == "yes" or imageValue.lower() == "autistic":
+            return jsonify({"message": f"For the given report, the result is Autistic."}) 
+        elif screenValue.lower() == "no" or imageValue.lower() == "non_autistic":
+            return jsonify({"message": f"For the given report, the result is Non_Autistic."})
+        else:
+            finalResult = combine_scores(np.argmax(imgScore),np.argmax(screenScore), np.sum(A)) 
+            print("Answer is" + " "+ finalResult)
+            return jsonify({"message": f"For the given report, the result is {finalResult}."})
 
     return render_template('autismChecker.html', message=None)
 
