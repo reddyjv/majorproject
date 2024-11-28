@@ -6,8 +6,9 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from tensorflow.keras.models import load_model
 import numpy as np
 
-screenModel = load_model(autism_screeningModel)
-# class_names = ['Yes', 'No']
+model_path = os.path.join(os.path.dirname(__file__), 'Models', 'screenmodel.h5')
+screenModel = load_model(model_path)
+
 def  screeningModel(A, Age_Mons, Sex, Jaundice, Family_mem_with_ASD):
     data = pd.DataFrame([{
         **{f'A{i+1}': val for i, val in enumerate(A)},
