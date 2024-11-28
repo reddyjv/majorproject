@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from imageModel import imageValidator
 from screenModel import screeningModel
 import numpy as np
+
 
 app = Flask(__name__)
 CORS(app)

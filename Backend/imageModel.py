@@ -1,10 +1,13 @@
 from utilities import autism_imageModel
 import cv2
 import numpy as np
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-imageModel = load_model(autism_imageModel)
+model_path = os.path.join(os.path.dirname(__file__), 'Models', 'autismImages.h5')
+imageModel = load_model(model_path)
 class_names = ['Autistic', 'Non_Autistic']
 
 def imageValidator(image_file):

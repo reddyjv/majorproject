@@ -55,7 +55,7 @@ export default function ExplorePage() {
 
   const handleSubmit = async () => {
     const data = new FormData()
-    for (let key in formData) {
+    for (const key in formData) {
       data.append(key, formData[key as keyof typeof formData])
     }
     if (uploadedImage) {

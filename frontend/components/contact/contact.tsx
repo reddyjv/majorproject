@@ -17,7 +17,7 @@ const Contact = () => {
           <div>
             <h2 className="text-3xl font-bold text-purple-600 mb-4">Get in Touch</h2>
             <p className="text-lg text-blue-700 mb-6">
-              We're here to answer any questions you may have about ASDDetect. Reach out to us and we'll respond as soon as we can.
+              We are here to answer any questions you may have about ASDDetect. Reach out to us and we will respond as soon as we can.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -67,7 +67,7 @@ const Contact = () => {
             { question: "What makes ASDDetect different from other screening tools?", answer: "ASDDetect uses advanced AI and machine learning algorithms to analyze multiple data points, including behavioral patterns and facial expressions, providing a more comprehensive and accurate screening process." },
             { question: "Is ASDDetect a replacement for professional diagnosis?", answer: "No, ASDDetect is a screening tool designed to assist in early detection. It should be used in conjunction with professional medical evaluation for a formal diagnosis." },
             { question: "How accurate is ASDDetect?", answer: "While accuracy can vary, our latest models have shown over 90% accuracy in initial studies. However, results should always be confirmed by healthcare professionals." },
-            { question: "How can I get started with ASDDetect?", answer: "You can sign up for an account on our website. Once registered, you'll be guided through the process of inputting data and receiving results." },
+            { question: "How can I get started with ASDDetect?", answer: "You can sign up for an account on our website. Once registered, you'll be guided through the process of inputting data and receiving results." }, // Escaped single quote here
           ].map((faq, index) => (
             <Card key={index} className="bg-purple-50 hover:shadow-xl transition-all duration-300">
               <CardContent className="p-6">
@@ -78,6 +78,7 @@ const Contact = () => {
           ))}
         </div>
       </section>
+
     </div>
   )
 }

@@ -1,0 +1,8 @@
+Flask
+flask-cors
+numpy
+opencv-python
+tensorflow
+pandas
+scikit-learn
+gunicorn==20.1.0
