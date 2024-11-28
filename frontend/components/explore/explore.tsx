@@ -63,7 +63,7 @@ export default function ExplorePage() {
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/compute', {
+      const response = await fetch('https://asddetect-server.onrender.com/compute', {
         method: 'POST',
         body: data,
       })
