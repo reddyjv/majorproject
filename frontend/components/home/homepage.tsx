@@ -83,7 +83,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">What Our Users Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {[ 
+          {[
             { name: "Dr. Emily Chen", role: "Pediatric Neurologist", quote: "ASDDetect has revolutionized our early screening process. The accuracy and speed of the results have significantly improved our ability to provide timely interventions." },
             { name: "Michael and Sarah Thompson", role: "Parents", quote: "Thanks to ASDDetect, we were able to identify early signs of ASD in our son. The early diagnosis allowed us to start therapy much sooner, making a world of difference." },
           ].map((testimonial, index) => (
