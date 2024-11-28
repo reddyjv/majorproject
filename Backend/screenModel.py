@@ -1,6 +1,8 @@
 from utilities import autism_screeningModel
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import pandas as pd
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from tensorflow.keras.models import load_model
 import numpy as np
 
