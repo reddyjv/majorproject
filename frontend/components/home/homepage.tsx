@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Puzzle, Brain, FileSpreadsheet, ImageIcon, BarChart, Users, Award, ArrowRight, Zap, Heart, Sparkles } from 'lucide-react'
+import { Puzzle, Brain, FileSpreadsheet, ImageIcon, BarChart, Users, Award, Zap, Heart, Sparkles } from 'lucide-react'
 import Footer from '../footer/footer'
 import Navbar from '../navbar/navbar'
 
@@ -15,8 +15,9 @@ export default function HomePage() {
             Empowering Early Diagnosis of Autism Spectrum Disorder
           </h1>
           <p className="text-2xl text-purple-600 mb-10 max-w-3xl mx-auto">
-            Harnessing the power of advanced machine learning to make a lasting difference in children's lives.
+            Harnessing the power of advanced machine learning to make a lasting difference in children&apos;s lives.
           </p>
+
           <Button className="bg-pink-400 hover:bg-pink-500 text-white text-lg px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
             Discover Our Approach
           </Button>
@@ -37,7 +38,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">How Our Technology Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {[
+          {[ 
             { icon: <FileSpreadsheet className="h-16 w-16 text-pink-400" />, title: "Data Input", description: "Upload CSV files with demographic and behavioral data, or provide facial images for analysis." },
             { icon: <Brain className="h-16 w-16 text-pink-400" />, title: "AI Analysis", description: "Our advanced machine learning models process the data, identifying key indicators of ASD." },
             { icon: <BarChart className="h-16 w-16 text-pink-400" />, title: "Comprehensive Results", description: "Receive detailed insights and visualizations to support early diagnosis and intervention planning." },
@@ -57,7 +58,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-blue-50 rounded-3xl">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">Why Choose ASDDetect</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {[
+          {[ 
             { icon: <Users className="h-12 w-12 text-pink-400" />, title: "Early Detection", description: "Identify signs of ASD earlier, enabling timely intervention and support for better outcomes." },
             { icon: <BarChart className="h-12 w-12 text-pink-400" />, title: "Accurate Insights", description: "Our models combine demographic, behavioral, and image data for high-precision analysis." },
             { icon: <Brain className="h-12 w-12 text-pink-400" />, title: "Continuous Learning", description: "Our AI models are constantly updated with the latest research findings in ASD." },
@@ -82,7 +83,7 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">What Our Users Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {[
+          {[ 
             { name: "Dr. Emily Chen", role: "Pediatric Neurologist", quote: "ASDDetect has revolutionized our early screening process. The accuracy and speed of the results have significantly improved our ability to provide timely interventions." },
             { name: "Michael and Sarah Thompson", role: "Parents", quote: "Thanks to ASDDetect, we were able to identify early signs of ASD in our son. The early diagnosis allowed us to start therapy much sooner, making a world of difference." },
           ].map((testimonial, index) => (
@@ -106,11 +107,13 @@ export default function HomePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-pink-50 rounded-3xl">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">Advanced Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {[
+          {[ 
             { icon: <Zap className="h-12 w-12 text-pink-400" />, title: "Real-time Analysis", description: "Get instant results as you input data, allowing for quick decision-making and intervention planning." },
             { icon: <Heart className="h-12 w-12 text-pink-400" />, title: "Personalized Insights", description: "Receive tailored recommendations based on individual profiles and specific ASD indicators." },
             { icon: <Sparkles className="h-12 w-12 text-pink-400" />, title: "Multi-modal Integration", description: "Combine various data types including behavioral assessments, genetic markers, and neuroimaging for comprehensive analysis." },
-            { icon: <Users className="h-12 w-12 text-pink-400" />, title: "Collaborative Features", description: "Share results and collaborate with experts, therapists, and caregivers for holistic support." },
+            { icon: <Users className="h-12 w-12 text-pink-400" />, title: "Collaborative Features", description: "Share results and collaborate with experts, caregivers, and other professionals in a secure environment." },
+            { icon: <BarChart className="h-12 w-12 text-pink-400" />, title: "Interactive Dashboards", description: "Visualize data through intuitive dashboards that highlight key trends and insights." },
+            { icon: <ImageIcon className="h-12 w-12 text-pink-400" />, title: "Evidence-based Research", description: "Backed by the latest clinical research, ensuring your decisions are informed and reliable." },
           ].map((feature, index) => (
             <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <CardContent className="p-8">
@@ -121,24 +124,6 @@ export default function HomePage() {
                 <p className="text-purple-600">{feature.description}</p>
               </CardContent>
             </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">Frequently Asked Questions</h2>
-        <div className="space-y-8">
-          {[
-            { question: "How accurate is the diagnosis?", answer: "Our models are trained on a vast dataset and constantly updated to ensure high accuracy in early ASD detection." },
-            { question: "Is it secure?", answer: "Yes, we take data security seriously. All information is encrypted and stored securely." },
-            { question: "What age group is this tool suitable for?", answer: "ASDDetect is designed to support children ages 1 to 6 for early detection and intervention." },
-            { question: "How often do I need to use it?", answer: "We recommend regular checkups as part of routine developmental assessments, but the tool is available whenever you need it." },
-          ].map((faq, index) => (
-            <div key={index} className="bg-blue-100 p-6 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-semibold text-blue-600">{faq.question}</h3>
-              <p className="text-purple-600 mt-4">{faq.answer}</p>
-            </div>
           ))}
         </div>
       </section>
