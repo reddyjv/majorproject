@@ -17,7 +17,7 @@ const Contact = () => {
           <div>
             <h2 className="text-3xl font-bold text-purple-600 mb-4">Get in Touch</h2>
             <p className="text-lg text-blue-700 mb-6">
-              We're here to answer any questions you may have about ASDDetect. Reach out to us and we'll respond as soon as we can.
+              We are here to answer any questions you may have about ASDDetect. Reach out to us and we will respond as soon as we can.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
