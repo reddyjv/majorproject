@@ -8,7 +8,7 @@ import Navbar from '../navbar/navbar'
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50">
-      <Navbar/>
+      <Navbar />
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="text-5xl font-extrabold text-blue-600 mb-6">
@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="mt-16 relative">
           <Image
             src="https://t3.ftcdn.net/jpg/05/86/19/50/240_F_586195067_j0O9wz2qVytAhim36idl1YLsejC76mg8.jpg"
-            alt="Children playing together should put image here"
+            alt="Children playing together"
             width={1000}
             height={400}
             className="rounded-2xl shadow-2xl mx-auto"
@@ -110,9 +110,7 @@ export default function HomePage() {
             { icon: <Zap className="h-12 w-12 text-pink-400" />, title: "Real-time Analysis", description: "Get instant results as you input data, allowing for quick decision-making and intervention planning." },
             { icon: <Heart className="h-12 w-12 text-pink-400" />, title: "Personalized Insights", description: "Receive tailored recommendations based on individual profiles and specific ASD indicators." },
             { icon: <Sparkles className="h-12 w-12 text-pink-400" />, title: "Multi-modal Integration", description: "Combine various data types including behavioral assessments, genetic markers, and neuroimaging for comprehensive analysis." },
-            { icon: <Users className="h-12 w-12 text-pink-400" />, title: "Collaborative Platform", description: "Enable seamless communication between healthcare providers, educators, and families for coordinated care." },
-            { icon: <BarChart className="h-12 w-12 text-pink-400" />, title: "Progress Tracking", description: "Monitor developmental milestones and intervention effectiveness over time with intuitive visualizations." },
-            { icon: <Brain className="h-12 w-12 text-pink-400" />, title: "Research Integration", description: "Stay updated with the latest ASD research findings automatically incorporated into our AI models." },
+            { icon: <Users className="h-12 w-12 text-pink-400" />, title: "Collaborative Features", description: "Share results and collaborate with experts, therapists, and caregivers for holistic support." },
           ].map((feature, index) => (
             <Card key={index} className="bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <CardContent className="p-8">
@@ -130,38 +128,22 @@ export default function HomePage() {
       {/* FAQ Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center text-blue-600 mb-16">Frequently Asked Questions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="space-y-8">
           {[
-            { question: "How accurate is ASDDetect in identifying ASD?", answer: "ASDDetect utilizes state-of-the-art machine learning algorithms and has shown high accuracy in initial studies. However, it's important to note that it's a screening tool and not a replacement for professional diagnosis." },
-            { question: "Is my data secure and private?", answer: "Absolutely. We take data privacy very seriously. All data is encrypted, stored securely, and never shared without explicit consent. We comply with HIPAA and GDPR regulations." },
-            { question: "Can ASDDetect be used for all age groups?", answer: "Currently, ASDDetect is optimized for early childhood screening (ages 18 months to 5 years). We're continuously working on expanding our models to cover a wider age range." },
-            { question: "How often should I use ASDDetect for screening?", answer: "We recommend periodic screenings, typically every 6-12 months during early childhood. However, please consult with your healthcare provider for personalized recommendations." },
+            { question: "How accurate is the diagnosis?", answer: "Our models are trained on a vast dataset and constantly updated to ensure high accuracy in early ASD detection." },
+            { question: "Is it secure?", answer: "Yes, we take data security seriously. All information is encrypted and stored securely." },
+            { question: "What age group is this tool suitable for?", answer: "ASDDetect is designed to support children ages 1 to 6 for early detection and intervention." },
+            { question: "How often do I need to use it?", answer: "We recommend regular checkups as part of routine developmental assessments, but the tool is available whenever you need it." },
           ].map((faq, index) => (
-            <Card key={index} className="bg-blue-50 hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold text-blue-600 mb-4">{faq.question}</h3>
-                <p className="text-purple-600">{faq.answer}</p>
-              </CardContent>
-            </Card>
+            <div key={index} className="bg-blue-100 p-6 rounded-xl shadow-lg">
+              <h3 className="text-2xl font-semibold text-blue-600">{faq.question}</h3>
+              <p className="text-purple-600 mt-4">{faq.answer}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-6 text-blue-600">Ready to Make a Difference?</h2>
-          <p className="text-xl mb-10 max-w-3xl mx-auto text-purple-600">
-            Join us in revolutionizing ASD detection and improving lives. Start your journey with ASDDetect today.
-          </p>
-          <Button className="bg-pink-400 hover:bg-pink-500 text-white text-lg px-8 py-4 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-            Get Started Now <ArrowRight className="ml-2 h-5 w-5 inline" />
-          </Button>
-        </div>
-      </section>
-
-      <Footer/>
+      <Footer />
     </div>
   )
 }
-
