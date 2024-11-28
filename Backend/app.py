@@ -3,6 +3,9 @@ from flask_cors import CORS
 from imageModel import imageValidator
 from screenModel import screeningModel
 import numpy as np
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' 
+
 
 app = Flask(__name__)
 CORS(app)
