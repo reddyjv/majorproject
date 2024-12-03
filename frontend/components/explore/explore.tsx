@@ -168,19 +168,23 @@ export default function ExplorePage() {
               </div>
               <div>
                 <Label className="text-blue-600">Sex</Label>
-                <RadioGroup defaultValue="male" className="flex space-x-4 mt-1">
-                  {['male', 'female'].map((value) => (
-                    <div key={value} className="flex items-center space-x-2">
-                      <RadioGroupItem
-                        value={value}
-                        id={value}
-                        checked={formData.Sex === value}
-                        onChange={() => handleRadioChange('Sex', value)}
-                      />
-                      <Label htmlFor={value}>{value.charAt(0).toUpperCase() + value.slice(1)}</Label>
-                    </div>
-                  ))}
-                </RadioGroup>
+                <RadioGroup
+                    value={formData.Sex}
+                    onValueChange={(value) => handleRadioChange('Sex', value)}
+                    className="flex space-x-4 mt-1"
+                >
+              {['male', 'female'].map((value) => (
+               <div key={value} className="flex items-center space-x-2">
+                <RadioGroupItem
+                value={value}
+                id={value}
+                checked={formData.Sex === value}
+                onChange={() => handleRadioChange('Sex', value)}
+                />
+              <Label htmlFor={value}>{value.charAt(0).toUpperCase() + value.slice(1)}</Label>
+              </div>
+              ))}
+            </RadioGroup>
               </div>
               <div>
                 <Label className="text-blue-600">Jaundice</Label>
